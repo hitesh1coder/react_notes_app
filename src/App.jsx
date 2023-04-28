@@ -1,7 +1,12 @@
 import React from "react";
+import UserGroups from "./Component/UserGroups";
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div className="app">
+      <UserGroups />
+    </div>
+  );
 };
 
 export default App;
