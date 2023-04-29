@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import CreateGroup from "../CreateGroup/CreateGroup";
 import "./UserGroups.css";
 
 const UserGroups = () => {
+  const [createGruopModel, setCreateGruopModel] = useState(false);
+
+  const closeModel = () => setCreateGruopModel(false);
   return (
     <div className="usergroup_container">
       <h1>Pocket Notes</h1>
-      <button className="adduser_btn"> + Create Notes group</button>
+      <button className="adduser_btn" onClick={() => setCreateGruopModel(true)}>
+        {" "}
+        + Create Notes group
+      </button>
+      {createGruopModel && <CreateGroup closeModel={closeModel} />}
       <div className="groups">
         <div className="user">
           <div className="icon" style={{ backgroundColor: "#0047FF" }}>

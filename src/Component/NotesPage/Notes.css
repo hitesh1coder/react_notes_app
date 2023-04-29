@@ -1,0 +1,61 @@
+.notes_container {
+  width: 70vw;
+  height: 100vh;
+  background: #e8e8e8;
+}
+.notes_header {
+  width: 70vw;
+  height: 10vh;
+}
+.notes_section {
+  height: 90vh;
+}
+.notes {
+  background: #f7ecdc;
+  height: 63vh;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+.note_container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 30%;
+  padding: 1rem 0.5rem;
+  justify-content: center;
+  font-weight: 500;
+}
+.notes_time {
+  height: 100%;
+  width: 50%;
+}
+.notes_content {
+  max-width: 90%;
+  padding: 0 0.5rem;
+}
+.notes_content p {
+  line-height: 1.3rem;
+  word-spacing: 0.2rem;
+}
+
+.create_notes {
+  margin: 1rem;
+  height: 23vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.create_notes img {
+  width: 1.6rem;
+  margin-bottom: 0.5rem;
+  margin-left: 51rem;
+  cursor: pointer;
+}
+.input_notes {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  height: 21vh;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+}

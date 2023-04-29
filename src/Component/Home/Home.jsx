@@ -1,6 +1,6 @@
 import React from "react";
-import homeImage from "../../../public/images/image-removebg-preview 1.png";
-import lockIcon from "../../../public/images/Vector (3).png";
+import homeImage from "../../images/image-removebg-preview 1.png";
+import lockIcon from "../../images/Vector (3).png";
 import "./Home.css";
 
 const Home = () => {
