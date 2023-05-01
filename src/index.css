@@ -9,3 +9,9 @@
   display: flex;
   flex-direction: row;
 }
+
+@media screen and (max-width: 420px) {
+  .app {
+    flex-direction: column;
+  }
+}

@@ -27,10 +27,11 @@
 }
 .notes_time {
   height: 100%;
-  width: 50%;
+  width: 70%;
 }
 .notes_content {
   max-width: 90%;
+  min-width: 85%;
   padding: 0 0.5rem;
 }
 .notes_content p {
@@ -44,12 +45,14 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .create_notes img {
   width: 1.6rem;
-  margin-bottom: 0.5rem;
-  margin-left: 51rem;
   cursor: pointer;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
 }
 .input_notes {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -58,4 +61,13 @@
   border: none;
   outline: none;
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 420px) {
+  .notes_container {
+    width: 100vw;
+  }
+  .notes_content {
+    min-width: 70%;
+  }
 }

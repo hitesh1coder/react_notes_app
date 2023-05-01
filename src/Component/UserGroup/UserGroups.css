@@ -1,12 +1,18 @@
 .usergroup_container {
   width: 30vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .usergroup_container h1 {
   padding: 1rem;
 }
 .adduser_btn {
-  margin: 1rem 4rem;
+  position: relative;
+  left: 4rem;
+  bottom: 0.4rem;
   padding: 0.3rem 0.7rem;
   background: #000000;
   color: #fff;
@@ -22,17 +28,24 @@
   height: 79vh;
   display: flex;
   flex-direction: column;
-  padding: 0.3rem 3rem;
-
-  gap: 1.4rem;
+  padding: 0.3rem 2rem;
+  gap: 1rem;
   overflow-y: auto;
 }
 .user {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
+}
+.user img {
+  display: none;
+}
+.user:focus {
+  background-color: #f7ecdc;
+  width: 110%;
+  border-radius: 1.4rem 0 0 1.4rem;
 }
 .user .icon {
   display: flex;
@@ -49,4 +62,20 @@
 }
 .user h2 {
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 420px) {
+  .usergroup_container {
+    width: 100vw;
+  }
+  .mobile {
+    display: none;
+  }
+  .user img {
+    display: block;
+  }
+  .adduser_btn {
+    width: 80%;
+    left: 2rem;
+  }
 }
