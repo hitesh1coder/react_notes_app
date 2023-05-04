@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import CreateGroup from "../CreateGroup/CreateGroup";
-
 import "./UserGroups.css";
 
-const UserGroups = ({ openNotes, isMobile }) => {
+const UserGroups = ({ isMobile, openNotes }) => {
   const [createGruopModel, setCreateGruopModel] = useState(false);
 
   const closeModel = () => setCreateGruopModel(false);
 
-  let grops = JSON.parse(localStorage.getItem("groups"));
+  let Groups = JSON.parse(localStorage.getItem("groups"));
+
   return (
     <div
       className={
@@ -21,16 +21,21 @@ const UserGroups = ({ openNotes, isMobile }) => {
       </button>
       {createGruopModel && <CreateGroup closeModel={closeModel} />}
       <div className="groups">
-        {grops?.map((group) => {
+        {Groups?.map((group) => {
           return (
             <>
-              <div onClick={openNotes}>
-                <div className="user active" tabIndex="1" key={group.id}>
+              <div
+                onClick={() => {
+                  openNotes(group.id);
+                }}
+                key={group.id}
+              >
+                <div className="user" tabIndex="1">
                   <div
                     className="icon"
                     style={{ backgroundColor: `${group.groupColor}` }}
                   >
-                    <p>{group.groupName}</p>
+                    <p>{group.groupIcon}</p>
                   </div>
                   <h2>{group.groupName}</h2>
                 </div>

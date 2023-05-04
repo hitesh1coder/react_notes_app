@@ -1,5 +1,5 @@
 .usergroup_container {
-  width: 30vw;
+  width: 25vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,12 +11,12 @@
 }
 .adduser_btn {
   position: relative;
-  left: 4rem;
+  left: 2rem;
   bottom: 0.4rem;
   padding: 0.3rem 0.7rem;
   background: #000000;
   color: #fff;
-  width: 60%;
+  width: 80%;
   font-size: 1.2rem;
   border: none;
   outline: none;
@@ -24,27 +24,27 @@
   border-radius: 1rem;
 }
 .groups {
+  margin-top: 1rem;
   width: 100%;
   height: 79vh;
   display: flex;
   flex-direction: column;
   padding: 0.3rem 2rem;
-  gap: 1rem;
+  gap: 1.5rem;
   overflow-y: auto;
 }
 .user {
   display: flex;
   align-items: center;
-  gap: 1rem 0.5rem;
+  gap: 1rem;
   padding: 0.5rem;
   cursor: pointer;
+  width: 22.1vw;
 }
-.user img {
-  display: none;
-}
+
 .user:focus {
   background-color: #f7ecdc;
-  width: 110%;
+
   border-radius: 1.4rem 0 0 1.4rem;
 }
 .user .icon {
@@ -67,12 +67,20 @@
 @media screen and (max-width: 420px) {
   .usergroup_container {
     width: 100vw;
+    height: 100vh;
+  }
+  .groups {
+    margin-left: 3rem;
+    gap: 2rem;
   }
   .mobile {
     display: none;
   }
   .user img {
     display: block;
+  }
+  .user h2 {
+    font-size: 1.8rem;
   }
   .adduser_btn {
     width: 80%;

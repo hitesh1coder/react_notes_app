@@ -8,14 +8,23 @@ const CreateGroup = ({ closeModel }) => {
   const handleGroupColor = (e) => {
     setGroupColor(e.target.value);
   };
+  const avatar = groupName
+    .split(" ")
+    .map((x) => x[0])
+    .join("")
+    .toUpperCase();
+  const uniqueId =
+    Date.now().toString(36) + Math.random().toString(36).substr(15);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let groups = JSON.parse(localStorage.getItem("groups") || "[]");
 
     let groupInfo = {
-      id: groupName + groupColor,
+      id: uniqueId + groupColor,
       groupName: groupName,
       groupColor: groupColor,
+      groupIcon: avatar,
     };
     if (groupName && groupColor) {
       groups.push(groupInfo);
