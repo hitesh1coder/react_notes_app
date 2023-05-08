@@ -3,9 +3,6 @@ import UserGroups from "./Component/UserGroup/UserGroups";
 import Home from "./Component/Home/Home";
 import Notes from "./Component/NotesPage/Notes";
 
-let groupNotes = JSON.parse(localStorage.getItem("notes"));
-let groups = JSON.parse(localStorage.getItem("groups"));
-
 const App = () => {
   const [isMobile, setIsMobile] = useState(true);
   const [showNotesMobile, setShowNotesMobile] = useState(false);
@@ -13,19 +10,21 @@ const App = () => {
   const [groupData, setGroupData] = useState();
   const [fetchMassage, setFetchMassage] = useState();
 
+  let groupNotes = JSON.parse(localStorage.getItem("notes"));
+  let groups = JSON.parse(localStorage.getItem("groups"));
   const openNotes = (Id) => {
     setShowNotesMobile(false);
     setIsNotePage(true);
     setIsMobile((current) => !current);
-    const output = groups?.filter((group) => {
-      return group.id === Id;
+    const groupInfo = groups?.filter((group) => {
+      return group?.id === Id;
     });
-
-    if (output.length > 0) {
-      setGroupData(output[0]);
+    if (groupInfo) {
+      setGroupData(groupInfo[0]);
     } else {
-      setGroupData(output);
+      setGroupData("");
     }
+
     const fetchNotes = groupNotes?.filter((msg) => {
       return msg.groupId === Id;
     });
