@@ -21,26 +21,24 @@ const UserGroups = ({ isMobile, openNotes }) => {
       </button>
       {createGruopModel && <CreateGroup closeModel={closeModel} />}
       <div className="groups">
-        {Groups?.map((group) => {
+        {Groups?.map((group, index) => {
           return (
-            <>
-              <div
-                onClick={() => {
-                  openNotes(group.id);
-                }}
-                key={group.id}
-              >
-                <div className="user" tabIndex="1">
-                  <div
-                    className="icon"
-                    style={{ backgroundColor: `${group.groupColor}` }}
-                  >
-                    <p>{group.groupIcon}</p>
-                  </div>
-                  <h2>{group.groupName}</h2>
+            <div
+              onClick={() => {
+                openNotes(group.id);
+              }}
+              key={index}
+            >
+              <div className="user" tabIndex="1">
+                <div
+                  className="icon"
+                  style={{ backgroundColor: `${group.groupColor}` }}
+                >
+                  <p>{group.groupIcon}</p>
                 </div>
+                <h2>{group.groupName}</h2>
               </div>
-            </>
+            </div>
           );
         })}
       </div>

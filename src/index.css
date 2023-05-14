@@ -8,6 +8,7 @@
   height: 100vh;
   display: flex;
   flex-direction: row;
+  font-family: "Roboto", sans-serif;
 }
 ::-webkit-scrollbar {
   width: 5px;
